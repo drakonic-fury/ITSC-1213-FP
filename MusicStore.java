@@ -2,6 +2,7 @@ import java.util.*;
 public class MusicStore implements MusicStoreSpecs {
     public ArrayList<Item> inventory = new ArrayList<Item>();
     public ArrayList<String> cartNames = new ArrayList<String>();
+    public ArrayList<String> cartBrands = new ArrayList<String>();
     public ArrayList<Double> cartPrices = new ArrayList<Double>();
     public ArrayList<Integer> cartQuantities = new ArrayList<Integer>();
 
@@ -54,6 +55,7 @@ public class MusicStore implements MusicStoreSpecs {
             if(inventory.get(i).getSKU() == SKU)
             {
                 cartNames.add(inventory.get(i).getName());
+                cartBrands.add(inventory.get(i).getBrand());
                 cartPrices.add(inventory.get(i).getPrice());
                 cartQuantities.add(num);
             }
@@ -67,6 +69,10 @@ public class MusicStore implements MusicStoreSpecs {
     public ArrayList<String> getCartNames()
     {
         return cartNames;
+    }
+    public ArrayList<String> getCartBrands()
+    {
+        return cartBrands;
     }
     public ArrayList<Double> getCartPrices()
     {
