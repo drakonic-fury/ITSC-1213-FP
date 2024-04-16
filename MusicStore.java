@@ -1,7 +1,9 @@
 import java.util.*;
 public class MusicStore implements MusicStoreSpecs {
     public ArrayList<Item> inventory = new ArrayList<Item>();
-    public ArrayList<Item> shoppingCart = new ArrayList<Item>();
+    public ArrayList<String> cartNames = new ArrayList<String>();
+    public ArrayList<Double> cartPrices = new ArrayList<Double>();
+    public ArrayList<Integer> cartQuantities = new ArrayList<Integer>();
 
     public MusicStore()
     {
@@ -47,20 +49,31 @@ public class MusicStore implements MusicStoreSpecs {
 
     public void addToCart(int SKU, int num)
     {
-
-    }
-
-    public void checkOut()
-    {
-        
+        for(int i = 0; i < inventory.size(); i++)
+        {
+            if(inventory.get(i).getSKU() == SKU)
+            {
+                cartNames.add(inventory.get(i).getName());
+                cartPrices.add(inventory.get(i).getPrice());
+                cartQuantities.add(num);
+            }
+        }
     }
 
     public ArrayList<Item> getInventory()
     {
         return inventory;
     }
-    public ArrayList<Item> getCart()
+    public ArrayList<String> getCartNames()
     {
-        return shoppingCart;
+        return cartNames;
+    }
+    public ArrayList<Double> getCartPrices()
+    {
+        return cartPrices;
+    }
+    public ArrayList<Integer> getCartQuantities()
+    {
+        return cartQuantities;
     }
 }
