@@ -27,7 +27,7 @@ public class main
                 try
                 {
                     choice = scanner.nextInt();
-                    if((choice < 1)||(choice > 5))
+                    if((choice < 1)||(choice > 4))
                     {
                         throw new IllegalArgumentException();
                     }
@@ -126,22 +126,68 @@ public class main
                         grandTotal = grandTotal + (cartPrices.get(i)*cartQuants.get(i));
                     }
 
-                    print("\n Your grand total is: $" + grandTotal);
+                    print("\n Your grand total is: $" + (Math.round(grandTotal * 100.0) / 100.0));
                     break;
                 case 3:
                     print("Which item would you like to restock?");
                         for(int i = 0; i < inv.size(); i++)
                         {
-                            print((i) + " " + inv.get(i));
+                            print((i + 1) + " " + inv.get(i));
                         }
-                    int second = scanner.nextInt();
-                    int SKU = inv.get(second).getSKU();
-                    int stock = inv.get(second).getStock();
-                    print("There are currently " + stock + " in stock.");
-                    print("How many would you like to add to the stock?");
-                    int num = scanner.nextInt();
+                    
+                    done = false;
+                    while(!done)
+                    {
+                        try
+                        {
+                            choice2 = scanner.nextInt();
+                            if((choice2 < 1)||(choice2 > (inv.size() + 1)))
+                            {
+                                throw new IllegalArgumentException();
+                            }
+                            done = true;
+                        }
+                        catch(IllegalArgumentException exp)
+                        {
+                            print("Please enter a number corresponding to one of the items listed.");
+                        }
+                        catch(InputMismatchException ex)
+                        {
+                            print("Please enter a number.");
+                        }
+                    }
+                    choice2 = choice2 - 1;
+                    int SKU = inv.get(choice2).getSKU();
+                    int stock = inv.get(choice2).getStock();
+                    String name = inv.get(choice2).getName();
+                    //print("There are currently " + stock + " " + inv.get(choice2).getName() + " in stock.");
+                    print("Current " + name + " stock: " + stock);
+                    print("How many would you like to add?");
+                    
+                    int num = 0;
+                    done = false;
+                    while(!done)
+                    {
+                        try
+                        {
+                            num = scanner.nextInt();
+                            if(num < 1)
+                            {
+                                throw new IllegalArgumentException();
+                            }
+                            done = true;
+                        }
+                        catch(IllegalArgumentException exp)
+                        {
+                            print("Please enter a number greater than 0.");
+                        }
+                        catch(InputMismatchException ex)
+                        {
+                            print("Please enter a number.");
+                        }
+                    }
                     store.restockItem(SKU, num);
-                    print("There are now " + inv.get(second).getStock() + " " + inv.get(second).getName() + " in stock.");
+                    print("Updated " + name + " stock: " + inv.get(choice2).getStock());
                     break;
                 case 4:
                     break;
