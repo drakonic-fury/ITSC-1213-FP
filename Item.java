@@ -1,4 +1,4 @@
-public class Item
+public abstract class Item
 {
     private String name = new String();
     private String brand = new String();
