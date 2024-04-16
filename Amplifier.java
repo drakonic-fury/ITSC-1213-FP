@@ -7,4 +7,13 @@ public abstract class Amplifier extends Item
         super(name, brand, SKU, price, stock);
         this.wattage = wattage;
     }
+
+    public int getWattage()
+    {
+        return wattage;
+    }
+    public void setWattage(int wattage)
+    {
+        this.wattage = wattage;
+    }
 }

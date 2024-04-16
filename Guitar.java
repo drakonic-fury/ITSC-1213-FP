@@ -9,4 +9,21 @@ public abstract class Guitar extends Item
         this.numStrings = numStrings;
         this.numFrets = numFrets;
     }
+
+    public int getNumStrings()
+    {
+        return numStrings;
+    }
+    public int getNumFrets()
+    {
+        return numFrets;
+    }
+    public void setNumStrings(int numStrings)
+    {
+        this.numStrings = numStrings;
+    }
+    public void setNumFrets(int numFrets)
+    {
+        this.numFrets = numFrets;
+    }
 }

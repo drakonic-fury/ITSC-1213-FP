@@ -7,4 +7,13 @@ public class HeadAmp extends Amplifier
         super(name, brand, SKU, price, stock, wattage);
         this.outputImpedence = outputImpedence;
     }
+
+    public int getOutputImpedence()
+    {
+        return outputImpedence;
+    }
+    public void setOutputImpedence(int outputImpedence)
+    {
+        this.outputImpedence = outputImpedence;
+    }
 }

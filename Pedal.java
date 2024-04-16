@@ -7,4 +7,13 @@ public class Pedal extends Item
         super(name, brand, SKU, price, stock);
         this.effectType = effectType;
     }
+
+    public String getEffectType()
+    {
+        return effectType;
+    }
+    public void setEffectType(String effectType)
+    {
+        this.effectType = effectType;
+    }
 }

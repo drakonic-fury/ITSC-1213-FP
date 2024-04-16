@@ -7,4 +7,13 @@ public class AcousticGuitar extends Guitar
         super(name, brand, SKU, price, stock, numStrings, numFrets);
         this.stringType = stringType;
     }
+
+    public String getStringType()
+    {
+        return stringType;
+    }
+    public void setStringType(String stringType)
+    {
+        this.stringType = stringType;
+    }
 }

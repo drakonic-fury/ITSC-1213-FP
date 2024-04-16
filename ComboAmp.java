@@ -9,4 +9,21 @@ public class ComboAmp extends Amplifier
         this.speakerSize = speakerSize;
         this.numSpeakers = numSpeakers;
     }
+
+    public int getSpeakerSize()
+    {
+        return speakerSize;
+    }
+    public int getNumSpeakers()
+    {
+        return numSpeakers;
+    }
+    public void setSpeakerSize(int speakerSize)
+    {
+        this.speakerSize = speakerSize;
+    }
+    public void setNumSpeakers(int numSpeakers)
+    {
+        this.numSpeakers = numSpeakers;
+    }
 }

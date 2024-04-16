@@ -7,4 +7,13 @@ public class ElectricGuitar extends Guitar
         super(name, brand, SKU, price, stock, numStrings, numFrets);
         this.pickupConfig = pickupConfig;
     }
+
+    public String getPickupConfig()
+    {
+        return pickupConfig;
+    }
+    public void setPickupConfig(String pickupConfig)
+    {
+        this.pickupConfig = pickupConfig;
+    }
 }
